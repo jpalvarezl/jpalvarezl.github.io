@@ -1,1 +1,0 @@
-# jpalvarezl.github.io
