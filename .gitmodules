@@ -1,0 +1,3 @@
+[submodule "sc-flow"]
+	path = sc-flow
+	url = https://github.com/jpalvarezl/sc-flow.git
