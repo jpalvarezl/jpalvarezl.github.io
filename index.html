@@ -1,3 +1,59 @@
-<h1>GH Page</h1>
+<!doctype html>
+<html lang="en">
 
-   <a href="./projects/sc-flow/index.html">Open SC Flow</a>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>jpalvarezl GH page</title>
+   <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css">
+   <style>
+      :root {
+         color-scheme: light dark;
+         --background-color: light-dark(#fffaf0, #141816);
+         --font-color: light-dark(#202521, #e1e9e3);
+         --primary-color: light-dark(#245837, #9bdaa8);
+         --secondary-color: light-dark(#525e55, #a9b5ad);
+         --invert-font-color: light-dark(#fffaf0, #141816);
+      }
+   </style>
+</head>
+
+<body class="terminal">
+   <main class="container">
+
+      <div id="theme" class="btn-group" role="group" aria-label="Color theme"
+         style="position: absolute; top: 1rem; right: 1rem;">
+         <button type="button" class="btn btn-small btn-default" value="light dark" aria-pressed="true">System</button>
+         <button type="button" class="btn btn-small btn-default btn-ghost" value="light"
+            aria-pressed="false">Light</button>
+         <button type="button" class="btn btn-small btn-default btn-ghost" value="dark"
+            aria-pressed="false">Dark</button>
+      </div>
+
+      <script>
+         const buttons = document.querySelectorAll('#theme button');
+
+         for (const button of buttons) {
+            button.onclick = () => {
+               document.documentElement.style.colorScheme = button.value;
+               for (const option of buttons) {
+                  option.classList.toggle('btn-ghost', option !== button);
+                  option.setAttribute('aria-pressed', option === button);
+               }
+            };
+         }
+      </script>
+
+      <h1 class="terminal-prompt">jpalvarezl</h1>
+
+      <article class="terminal-card">
+         <header>SC Flow</header>
+         <div>
+            <p>An interactive React Flow demo.</p>
+            <a href="./projects/sc-flow/index.html">Open SC Flow →</a>
+         </div>
+      </article>
+   </main>
+</body>
+
+</html>
